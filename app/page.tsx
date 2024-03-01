@@ -7,7 +7,7 @@ export default function Home() {
         <Image
           layout="fill"
           objectFit="contain"
-          src="/flowers-hero-transparent-hd.png"
+          src="/flowers-hero-transparent.png"
           alt="hero"
         />
       </div>

@@ -1,10 +1,5 @@
-'use client';
-
-import Head from 'next/head';
-import Image from 'next/image';
-// import Resepsi from '../public/assets/icons/resepsi.svg';
-// import Ring from '../public/assets/icons/ring.svg';
-// import Location from '../public/assets/icons/location.svg';
+import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -18,7 +13,7 @@ export default function Home() {
       <section
         id="beranda"
         className="flex lg:hidden bg-cover bg-center  w-full h-screen  items-start py-14"
-        style={{ backgroundImage: 'url(/assets/prewedding-home.png)' }}
+        style={{ backgroundImage: "url(/assets/prewedding-home.png)" }}
       >
         <div className="flex flex-col  w-full relative">
           <div className="absolute h-full w-full bg-dark-450 bg-blur-2px"></div>
@@ -94,10 +89,15 @@ export default function Home() {
         <div className="flex flex-col mx-auto h-40 lg:h-full items-center justify-center w-full px-8">
           <div className="flex flex-col md:flex-row w-full">
             <div className="flex w-full my-2 h-16 lg:h-20 md:justify-center">
-              {/* <Ring className="h-12 md:h-16 w-12 md:w-16  mr-6 my-auto" /> */}
+              <Image
+                src="/assets/icons/ring.svg"
+                width={64}
+                height={64}
+                alt="Ring image"
+              />
               <div className="flex flex-col text-white font-habibi justify-between h-full">
                 <p className="text-base md:text-lg lg:text-3xl">
-                  Akad pernikahan{' '}
+                  Akad pernikahan{" "}
                 </p>
                 <p className="text-xs md:text-base lg:text-lg">
                   Pukul 08.00 s.d 10.00 WIB
@@ -106,9 +106,11 @@ export default function Home() {
             </div>
 
             <div className="flex w-full my-2 h-16 lg:h-20 md:justify-center">
-              <img
+              <Image
+                alt="Resepsi image"
                 src="/assets/icons/resepsi.svg"
-                className="h-12 md:h-16 w-12 md:w-16  mr-6 my-auto"
+                width={64}
+                height={64}
               />
               <div className="flex flex-col text-white font-habibi justify-between h-full">
                 <p className="text-base md:text-lg lg:text-3xl">Resepsi </p>
@@ -124,7 +126,12 @@ export default function Home() {
         </div>
         <div className="flex mx-auto h-32 lg:h-full items-start lg:items-end justify-start w-full px-8">
           <button className="mt-6 px-6 md:px-12 py-2 md:py-3 flex justify-center items-center border-white border rounded-l-full rounded-r-full mx-auto text-white font-habibi text-sm md:text-base">
-            {/* <Location className="h-8 md:h-10 w-8 md:w-10 mr-4" /> */}
+            <Image
+              src="/assets/icons/location.svg"
+              width={24}
+              height={24}
+              alt="Location image"
+            />
             Cek Lokasi
           </button>
         </div>

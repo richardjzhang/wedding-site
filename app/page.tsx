@@ -149,10 +149,17 @@ export default function Home() {
       >
         <Image
           alt="Cherry Blossom Branch"
+          src="/assets/images/cherry-blossom-large-blue.webp"
+          width={500}
+          height={447}
+          className="-top-20 -left-5 absolute"
+        />
+        <Image
+          alt="Cherry Blossom Branch"
           src="/assets/images/cherry-blossom-large.webp"
           width={500}
           height={447}
-          className="-top-10 -left-10 absolute"
+          className="-bottom-20 -right-10 absolute"
         />
         <div className="mb-20 w-full h-4 bg-slate-900"></div>
         <div className="flex items-center h-full gap-60">

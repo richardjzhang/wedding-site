@@ -30,7 +30,7 @@ export default function Home() {
         </div>
       </section>
       <section className="min-h-screen py-4 px-8 text-slate-800">
-        <h3 className="text-5xl mb-7 font-bellefair text-6xl">The Wedding</h3>
+        <h3 className="text-5xl mb-7 font-bellefair">The Wedding</h3>
         <div className="flex items-start gap-12 px-3">
           <div className="w-60">
             <h4 className="uppercase font-semibold tracking-widest">
@@ -92,7 +92,7 @@ export default function Home() {
                   <h5 className="mt-1 uppercase font-semibold tracking-widest">
                     The Ceremony
                   </h5>
-                  <p className="mt-2 text-sm">
+                  <p className="mt-2 text-sm text-slate-700">
                     Will be held at the Garden Chateau right by the archway.
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export default function Home() {
                   <h5 className="mt-1 uppercase font-semibold tracking-widest">
                     Refreshments
                   </h5>
-                  <p className="mt-2 text-sm">
+                  <p className="mt-2 text-sm text-slate-700">
                     Enjoy some light refreshments in Agincourt Room before the
                     reception begins.
                   </p>
@@ -119,7 +119,7 @@ export default function Home() {
                   <h5 className="mt-1 uppercase font-semibold tracking-widest">
                     Reception
                   </h5>
-                  <p className="mt-2 text-sm">
+                  <p className="mt-2 text-sm text-slate-700">
                     Food, drinks, dancing, and good times await the evening!
                     Enjoy the night with us.
                   </p>
@@ -133,7 +133,7 @@ export default function Home() {
                   <h5 className="mt-1 uppercase font-semibold tracking-widest">
                     Closing time
                   </h5>
-                  <p className="mt-2 text-sm">
+                  <p className="mt-2 text-sm text-slate-700">
                     The night is over, but the memories will last a lifetime.
                     We&apos;ll likely take this to a pub nearby!
                   </p>
@@ -145,11 +145,51 @@ export default function Home() {
       </section>
       <section
         id="gallery"
-        className="py-20 px-8 text-slate-800 min-h-screen flex flex-col items-center"
+        className="py-20 px-8 text-slate-800 h-[900px] flex flex-col items-center relative"
       >
-        <h3 className="text-5xl mb-7 font-bellefair text-6xl text-center">
-          RSVP
-        </h3>
+        <Image
+          alt="Cherry Blossom Branch"
+          src="/assets/images/cherry-blossom-large.webp"
+          width={500}
+          height={447}
+          className="-top-10 -left-10 absolute"
+        />
+        <div className="mb-20 w-full h-4 bg-slate-900"></div>
+        <div className="flex items-center h-full gap-60">
+          <div className="flex flex-col gap-32 mb-auto">
+            <div>
+              <p className="text-9xl font-bellefair font-semibold">R</p>
+            </div>
+            <div>
+              <p className="mt-10 text-9xl font-bellefair font-semibold">S</p>
+            </div>
+          </div>
+          <div className="my-auto flex flex-col justify-center">
+            <h3 className="text-4xl mb-4 font-bellefair text-center">
+              Enter your RSVP Code
+            </h3>
+            <div className="flex items-center border-b border-slate-900 py-2">
+              <input
+                className="mt-2 appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                type="text"
+                placeholder="Code from invitation"
+                aria-label="RSVP Code"
+              />
+            </div>
+            <button className="mt-5 px-16 py-2 rounded bg-transparent text-slate-800 border border-slate-800">
+              Submit
+            </button>
+          </div>
+          <div className="flex flex-col gap-32 mt-auto">
+            <div>
+              <p className="text-9xl font-bellefair font-semibold">V</p>
+            </div>
+            <div>
+              <p className="mt-10 text-9xl font-bellefair font-semibold">P</p>
+            </div>
+          </div>
+        </div>
+        <div className="mt-20 w-full h-4 bg-slate-900"></div>
       </section>
     </>
   );

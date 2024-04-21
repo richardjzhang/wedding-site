@@ -72,45 +72,53 @@ const CountdownTimer = ({ date }: { date: string }) => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full sm:gap-8">
-      <div className="flex justify-center gap-3 sm:gap-8">
+      <div className="flex justify-center gap-3 md:gap-8">
         <div className="flex flex-col gap-5 relative">
           <div className="h-16 w-16  flex justify-between items-center bg-pink-100 rounded-lg">
-            <div className="relative h-2.5 w-2.5  !-left-[6px] rounded-full bg-pink-300"></div>
-            <span className="font-bellefair text-slate-800 text-lg font-semibold">
+            <div className="relative h-2.5 w-2.5  !-left-[6px] rounded-full bg-pink-300 invisible md:visible"></div>
+            <span className="font-bellefair text-slate-800 md:text-lg font-semibold">
               {timer?.days}
             </span>
-            <span className="font-bellefair text-slate-800 text-sm">D</span>
-            <div className="relative h-2.5 w-2.5 -right-[6px] rounded-full bg-pink-300"></div>
+            <span className="font-bellefair text-slate-800 text-xs md:text-sm">
+              D
+            </span>
+            <div className="relative h-2.5 w-2.5 -right-[6px] rounded-full bg-pink-300 invisible md:visible"></div>
           </div>
         </div>
         <div className="flex flex-col gap-5 relative">
           <div className="h-16 w-16 flex justify-between items-center bg-pink-100 rounded-lg">
-            <div className="relative h-2.5 w-2.5 !-left-[6px] rounded-full bg-pink-300"></div>
-            <span className="font-bellefair text-slate-800 text-lg font-semibold">
+            <div className="relative h-2.5 w-2.5 !-left-[6px] rounded-full bg-pink-300 invisible md:visible"></div>
+            <span className="font-bellefair text-slate-800 md:text-lg font-semibold">
               {timer?.hours}
             </span>
-            <span className="font-bellefair text-slate-800 text-sm">H</span>
-            <div className="relative h-2.5 w-2.5 -right-[6px] rounded-full bg-pink-300"></div>
+            <span className="font-bellefair text-slate-800 text-xs md:text-sm">
+              H
+            </span>
+            <div className="relative h-2.5 w-2.5 -right-[6px] rounded-full bg-pink-300 invisible md:visible"></div>
           </div>
         </div>
         <div className="flex flex-col gap-5 relative">
           <div className="h-16 w-16  flex justify-between items-center bg-pink-100 rounded-lg">
-            <div className="relative h-2.5 w-2.5 !-left-[6px] rounded-full bg-pink-300"></div>
-            <span className="font-bellefair text-slate-800 text-lg font-semibold">
+            <div className="relative h-2.5 w-2.5 !-left-[6px] rounded-full bg-pink-300 invisible md:visible"></div>
+            <span className="font-bellefair text-slate-800 md:text-lg font-semibold">
               {timer?.minutes}
             </span>
-            <span className="font-bellefair text-slate-800 text-sm">M</span>
-            <div className="relative h-2.5 w-2.5 -right-[6px] rounded-full bg-pink-300"></div>
+            <span className="font-bellefair text-slate-800 text-xs md:text-sm">
+              M
+            </span>
+            <div className="relative h-2.5 w-2.5 -right-[6px] rounded-full bg-pink-300 invisible md:visible"></div>
           </div>
         </div>
-        <div className="flex flex-col gap-5 relative">
+        <div className="-mr-5 flex flex-col w-0 relative invisible md:visible md:gap-5 md:w-full md:mr-0">
           <div className="h-16 w-16  flex justify-between items-center bg-pink-100 rounded-lg">
-            <div className="relative h-2.5 w-2.5  !-left-[6px] rounded-full bg-pink-300"></div>
-            <span className="font-bellefair text-slate-800 text-lg font-semibold">
+            <div className="relative h-2.5 w-2.5  !-left-[6px] rounded-full bg-pink-300 invisible md:visible"></div>
+            <span className="font-bellefair text-slate-800 md:text-lg font-semibold">
               {timer?.seconds}
             </span>
-            <span className="font-bellefair text-slate-800 text-sm">S</span>
-            <div className="relative h-2.5 w-2.5  -right-[6px] rounded-full bg-pink-300"></div>
+            <span className="font-bellefair text-slate-800 text-xs md:text-sm">
+              S
+            </span>
+            <div className="relative h-2.5 w-2.5  -right-[6px] rounded-full bg-pink-300 invisible md:visible"></div>
           </div>
         </div>
       </div>

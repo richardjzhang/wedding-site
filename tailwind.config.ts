@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        body: ["var(--font-bellefair)"],
-        title: ["var(--font-lux)"],
+        bellefair: ["var(--font-bellefair)"],
+        fancy: ["var(--font-mrs-saint-delafield)"],
       },
     },
   },

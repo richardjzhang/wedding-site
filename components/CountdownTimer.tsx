@@ -76,40 +76,40 @@ const CountdownTimer = ({ date }: { date: string }) => {
         <div className="flex flex-col gap-5 relative">
           <div className="h-16 w-16  flex justify-between items-center bg-pink-100 rounded-lg">
             <div className="relative h-2.5 w-2.5  !-left-[6px] rounded-full bg-pink-300"></div>
-            <span className="font-body text-slate-800 text-lg font-semibold">
+            <span className="font-bellefair text-slate-800 text-lg font-semibold">
               {timer?.days}
             </span>
-            <span className="font-body text-slate-800 text-sm">D</span>
+            <span className="font-bellefair text-slate-800 text-sm">D</span>
             <div className="relative h-2.5 w-2.5 -right-[6px] rounded-full bg-pink-300"></div>
           </div>
         </div>
         <div className="flex flex-col gap-5 relative">
           <div className="h-16 w-16 flex justify-between items-center bg-pink-100 rounded-lg">
             <div className="relative h-2.5 w-2.5 !-left-[6px] rounded-full bg-pink-300"></div>
-            <span className="font-body text-slate-800 text-lg font-semibold">
+            <span className="font-bellefair text-slate-800 text-lg font-semibold">
               {timer?.hours}
             </span>
-            <span className="font-body text-slate-800 text-sm">H</span>
+            <span className="font-bellefair text-slate-800 text-sm">H</span>
             <div className="relative h-2.5 w-2.5 -right-[6px] rounded-full bg-pink-300"></div>
           </div>
         </div>
         <div className="flex flex-col gap-5 relative">
           <div className="h-16 w-16  flex justify-between items-center bg-pink-100 rounded-lg">
             <div className="relative h-2.5 w-2.5 !-left-[6px] rounded-full bg-pink-300"></div>
-            <span className="font-body text-slate-800 text-lg font-semibold">
+            <span className="font-bellefair text-slate-800 text-lg font-semibold">
               {timer?.minutes}
             </span>
-            <span className="font-body text-slate-800 text-sm">M</span>
+            <span className="font-bellefair text-slate-800 text-sm">M</span>
             <div className="relative h-2.5 w-2.5 -right-[6px] rounded-full bg-pink-300"></div>
           </div>
         </div>
         <div className="flex flex-col gap-5 relative">
           <div className="h-16 w-16  flex justify-between items-center bg-pink-100 rounded-lg">
             <div className="relative h-2.5 w-2.5  !-left-[6px] rounded-full bg-pink-300"></div>
-            <span className="font-body text-slate-800 text-lg font-semibold">
+            <span className="font-bellefair text-slate-800 text-lg font-semibold">
               {timer?.seconds}
             </span>
-            <span className="font-body text-slate-800 text-sm">S</span>
+            <span className="font-bellefair text-slate-800 text-sm">S</span>
             <div className="relative h-2.5 w-2.5  -right-[6px] rounded-full bg-pink-300"></div>
           </div>
         </div>

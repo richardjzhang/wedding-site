@@ -12,7 +12,7 @@ const bellefair = Bellefair({
 const lux = Mrs_Saint_Delafield({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-lux",
+  variable: "--font-mrs-saint-delafield",
 });
 
 export const metadata: Metadata = {

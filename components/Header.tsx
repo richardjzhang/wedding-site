@@ -26,7 +26,7 @@ export default function Header() {
         isScrolled ? "shadow-md border-b border-zinc-200" : ""
       )}
     >
-      <p className="mr-4 text-4xl font-title">A</p>
+      <p className="mr-4 text-4xl font-fancy">A</p>
       <Image
         className="rotate-[17deg] scale-x-[-1] -mt-2"
         alt="Cherry Blossom"
@@ -34,7 +34,7 @@ export default function Header() {
         width={24}
         height={72}
       />
-      <p className="ml-4 text-4xl font-title">R</p>
+      <p className="ml-4 text-4xl font-fancy">R</p>
     </div>
   );
 }

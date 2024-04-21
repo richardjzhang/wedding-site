@@ -26,15 +26,15 @@ export default function Header() {
         isScrolled ? "shadow-md border-b border-zinc-200" : ""
       )}
     >
-      <p className="mr-4 text-4xl font-fancy">A</p>
+      <p className="mr-3 text-4xl font-fancy">A</p>
       <Image
-        className="rotate-[17deg] scale-x-[-1] -mt-2"
+        className="-rotate-[64deg] scale-y-[-1] -mt-2"
         alt="Cherry Blossom"
-        src="/assets/images/cherry-blossom.png"
-        width={24}
-        height={72}
+        src="/assets/images/cherry-blossom.webp"
+        width={64}
+        height={192}
       />
-      <p className="ml-4 text-4xl font-fancy">R</p>
+      <p className="ml-3 text-4xl font-fancy">R</p>
     </div>
   );
 }

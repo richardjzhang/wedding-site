@@ -13,6 +13,8 @@ export default function Home() {
                 src="/assets/images/proposal-grid.webp"
                 fill
                 objectFit="cover"
+                placeholder="blur"
+                blurDataURL="/assets/images/proposal-blurred.webp"
               />
             </div>
           </div>
@@ -23,6 +25,8 @@ export default function Home() {
                 src="/assets/images/proposal.webp"
                 fill
                 objectFit="cover"
+                placeholder="blur"
+                blurDataURL="/assets/images/proposal-blurred.webp"
               />
             </div>
           </div>

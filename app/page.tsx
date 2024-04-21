@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CountdownTimer from "@/components/CountdownTimer";
 
 export default function Home() {
   return (
@@ -13,17 +14,18 @@ export default function Home() {
               objectFit="cover"
             />
           </div>
-          <div className="flex flex-col items-center text-black bg-white opacity-95 border border-zinc-200 shadow-md w-1/2 min-h-2/5 h-2/5 absolute top-[48%] left-1/4 rounded-lg p-8">
+          <div className="flex flex-col items-center text-black bg-white opacity-95 border border-zinc-200 shadow-md w-1/2 min-h-fit absolute top-[48%] left-1/4 rounded-lg pt-8 px-8 pb-12">
             <Image
               alt="Cherry Blossom"
               src="/assets/images/cherry-blossom-flower.png"
               width={60}
               height={20}
             />
-            <h1 className="font-title text-7xl mb-3 mt-10">Annie + Richard</h1>
-            <p className="font-body mt-4 text-lg tracking-widest">
+            <h1 className="font-title text-7xl mb-3 mt-8">Annie + Richard</h1>
+            <p className="font-body mt-4 mb-8 text-lg tracking-widest">
               10 JANUARY 2025
             </p>
+            <CountdownTimer date="2025-01-10 16:00:00" />
           </div>
         </div>
         <div className="flex flex-col text-black px-8 pb-20 pt-28 justify-end">

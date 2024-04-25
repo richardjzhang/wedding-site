@@ -1,7 +1,9 @@
 import Image from "next/image";
 import CountdownTimer from "@/components/CountdownTimer";
+import { get } from "@vercel/edge-config";
 
-export default function Home() {
+export default async function Home() {
+  const showRsvp = await get("showRsvp");
   return (
     <>
       <section className="h-[550px] px-8 md:h-screen">
@@ -160,67 +162,66 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section
-        id="gallery"
-        className="py-20 px-8 text-slate-800 h-[900px] flex flex-col items-center relative"
-      >
-        <div className="top-0 -left-5 absolute md:-top-20">
-          <div className="w-[250px] h-[224px] relative md:w-[450px] md:h-[338px]">
-            <Image
-              alt="Proposal photo"
-              src="/assets/images/cherry-blossom-large-blue.webp"
-              fill
-              objectFit="cover"
-            />
-          </div>
-        </div>
-        <div className="bottom-0 right-0 absolute md:-bottom-20">
-          <div className="w-[250px] h-[224px] relative md:w-[450px] md:h-[338px]">
-            <Image
-              alt="Proposal photo"
-              src="/assets/images/cherry-blossom-large.webp"
-              fill
-              objectFit="cover"
-            />
-          </div>
-        </div>
-        <div className="mb-20 w-full h-4 bg-slate-900"></div>
-        <div className="flex items-center h-full md:gap-40 lg:gap-60">
-          <div className="flex flex-col gap-32 mb-auto max-md:invisible">
-            <div>
-              <p className="text-9xl font-bellefair font-semibold">R</p>
-            </div>
-            <div>
-              <p className="mt-10 text-9xl font-bellefair font-semibold">S</p>
-            </div>
-          </div>
-          <div className="my-auto flex flex-col justify-center">
-            <h3 className="text-4xl mb-4 font-bellefair text-center">
-              Enter your RSVP Code
-            </h3>
-            <div className="flex items-center border-b border-slate-900 py-2">
-              <input
-                className="mt-2 appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                type="text"
-                placeholder="Code from invitation"
-                aria-label="RSVP Code"
+      {showRsvp && (
+        <section className="py-20 px-8 text-slate-800 h-[900px] flex flex-col items-center relative">
+          <div className="top-0 -left-5 absolute md:-top-20">
+            <div className="w-[250px] h-[224px] relative md:w-[450px] md:h-[338px]">
+              <Image
+                alt="Proposal photo"
+                src="/assets/images/cherry-blossom-large-blue.webp"
+                fill
+                objectFit="cover"
               />
             </div>
-            <button className="mt-5 px-16 py-2 rounded bg-transparent text-slate-800 border border-slate-800">
-              Submit
-            </button>
           </div>
-          <div className="flex flex-col gap-32 mt-auto max-md:invisible">
-            <div>
-              <p className="text-9xl font-bellefair font-semibold ">V</p>
-            </div>
-            <div>
-              <p className="mt-10 text-9xl font-bellefair font-semibold">P</p>
+          <div className="bottom-0 right-0 absolute md:-bottom-20">
+            <div className="w-[250px] h-[224px] relative md:w-[450px] md:h-[338px]">
+              <Image
+                alt="Proposal photo"
+                src="/assets/images/cherry-blossom-large.webp"
+                fill
+                objectFit="cover"
+              />
             </div>
           </div>
-        </div>
-        <div className="mt-20 w-full h-4 bg-slate-900"></div>
-      </section>
+          <div className="mb-20 w-full h-4 bg-slate-900"></div>
+          <div className="flex items-center h-full md:gap-40 lg:gap-60">
+            <div className="flex flex-col gap-32 mb-auto max-md:invisible">
+              <div>
+                <p className="text-9xl font-bellefair font-semibold">R</p>
+              </div>
+              <div>
+                <p className="mt-10 text-9xl font-bellefair font-semibold">S</p>
+              </div>
+            </div>
+            <div className="my-auto flex flex-col justify-center">
+              <h3 className="text-4xl mb-4 font-bellefair text-center">
+                Enter your RSVP Code
+              </h3>
+              <div className="flex items-center border-b border-slate-900 py-2">
+                <input
+                  className="mt-2 appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                  type="text"
+                  placeholder="Code from invitation"
+                  aria-label="RSVP Code"
+                />
+              </div>
+              <button className="mt-5 px-16 py-2 rounded bg-transparent text-slate-800 border border-slate-800">
+                Submit
+              </button>
+            </div>
+            <div className="flex flex-col gap-32 mt-auto max-md:invisible">
+              <div>
+                <p className="text-9xl font-bellefair font-semibold ">V</p>
+              </div>
+              <div>
+                <p className="mt-10 text-9xl font-bellefair font-semibold">P</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-20 w-full h-4 bg-slate-900"></div>
+        </section>
+      )}
     </>
   );
 }

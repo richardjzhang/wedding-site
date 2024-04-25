@@ -4,7 +4,7 @@ import CountdownTimer from "@/components/CountdownTimer";
 export default function Home() {
   return (
     <>
-      <section className="h-screen px-8">
+      <section className="h-[550px] px-8 md:h-screen">
         <div className="w-full h-full relative flex flex-col">
           <div className="absolute top-0 w-full h-full md:h-3/4">
             <div className="w-full h-full relative invisible md:visible">
@@ -16,7 +16,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="absolute top-0 w-full h-full md:h-3/4">
+          <div className="absolute top-0 w-full h-[400px] md:h-3/4">
             <div className="w-full h-full relative visible md:invisible">
               <Image
                 alt="Proposal photo"
@@ -26,12 +26,13 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center text-black text-center bg-white opacity-95 border border-zinc-200 shadow-md w-4/5 h-fit rounded-lg pt-8 px-8 pb-12 mx-auto my-auto md:w-1/2 md:left-1/4 md:top-[45%] md:absolute">
+          <div className="flex flex-col items-center text-black text-center bg-white opacity-95 border border-zinc-200 shadow-md w-[90%] h-fit rounded-lg pt-8 px-8 pb-12 mx-auto my-auto md:w-[65%] md:left-[17.5%] lg:w-1/2 lg:left-1/4 top-[45%] absolute left-[5%]">
             <Image
               alt="Cherry Blossom"
               src="/assets/images/cherry-blossom-flower.webp"
               width={60}
               height={20}
+              className="max-md:invisible max-md:h-0"
             />
             <h2 className="font-fancy text-5xl mb-3 mt-8 md:text-7xl">
               Annie + Richard
@@ -43,8 +44,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen py-32 px-8 text-slate-800 lg:py-4">
-        <h3 className="text-5xl mb-7 font-bellefair">The Wedding</h3>
+      <section className="min-h-screen py-24 md:py-4 px-8 text-slate-800">
+        <h3 className="text-4xl mb-7 font-bellefair sm:text-5xl">
+          The Wedding
+        </h3>
         <div className="flex flex-col items-start gap-10 px-3 md:flex-row md:gap-12">
           <div className="md:w-60">
             <h4 className="uppercase text-sm font-semibold tracking-widest">
@@ -95,7 +98,7 @@ export default function Home() {
           </div>
           <div>
             <h4 className="font-bellefair text-3xl text-slate-800">
-              Schedule of Events
+              What to expect
             </h4>
             <div className="mt-8 flex flex-col gap-6">
               <div className="flex items-start gap-20 lg:gap-32">
@@ -149,7 +152,7 @@ export default function Home() {
                   </h5>
                   <p className="mt-2 text-sm text-slate-700">
                     The night is over, but the memories will last a lifetime.
-                    We&apos;ll likely take this to a pub nearby!
+                    Thanks for joining us on our special day!
                   </p>
                 </div>
               </div>

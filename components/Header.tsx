@@ -35,7 +35,7 @@ export default function Header() {
     <>
       <div
         className={classNames(
-          "sticky top-0 z-20 bg-gradient-to-r from-pink-50 to-blue-50 flex justify-center items-center w-full pt-6 pb-6 text-black px-8",
+          "sticky top-0 z-20 bg-gradient-to-r from-pink-50 to-blue-50 flex justify-center items-center pt-6 pb-6 text-black px-8",
           isScrolled && !mobileNavOpened
             ? "shadow-md border-b border-zinc-200"
             : ""
@@ -58,7 +58,7 @@ export default function Header() {
             The Wedding
           </p>
         </Link>
-        <div className="flex justify-center items-center md:mx-24 mx-auto">
+        <div className="flex justify-center items-center md:mx-24">
           <p className="w-fit md:text-4xl font-fancy text-2xl">A</p>
           <div className="mx-1 md:w-16 md:h-16 relative -rotate-[64deg] scale-y-[-1] -mt-2 w-12 h-12">
             <Image
@@ -78,7 +78,7 @@ export default function Header() {
         </div>
       </div>
       {mobileNavOpened && (
-        <div className="fixed top-[104px] left-0 w-svw h-full bg-gradient-to-r from-pink-50 to-blue-50 opacity-95 z-10 overflow-hidden">
+        <div className="fixed top-[104px] left-0 w-full h-full bg-gradient-to-r from-pink-50 to-blue-50 opacity-95 z-10">
           <div className="flex flex-col gap-4 px-8">
             <Link
               className=""

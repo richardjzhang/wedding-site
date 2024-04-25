@@ -15,7 +15,7 @@ const lux = Mrs_Saint_Delafield({
 });
 
 export const metadata: Metadata = {
-  title: "Annie & Richard's Wedding",
+  title: "Annie & Richard",
   description: "Wedding invitation website for Annie & Richard",
 };
 

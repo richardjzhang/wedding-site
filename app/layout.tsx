@@ -29,10 +29,8 @@ export default function RootLayout({
       <body
         className={`${bellefair.variable} ${lux.variable} bg-gradient-to-r from-pink-50 to-blue-50`}
       >
-        <div className="w-full">
-          <Header />
-          <div className="mx-auto">{children}</div>
-        </div>
+        <Header />
+        <div className="mx-auto">{children}</div>
       </body>
     </html>
   );

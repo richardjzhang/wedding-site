@@ -6,7 +6,7 @@ export default async function Home() {
   const showRsvp = await get("showRsvp");
   return (
     <>
-      <section className="h-[550px] px-8 md:h-screen">
+      <section className="h-[550px] px-8 md:h-screen md:-mb-32">
         <div className="w-full h-full relative flex flex-col">
           <div className="absolute top-0 w-full h-[400px] md:h-3/4">
             <div className="w-full h-full relative ">
@@ -18,16 +18,6 @@ export default async function Home() {
               />
             </div>
           </div>
-          {/* <div className="absolute top-0 w-full h-[400px] md:h-3/4">
-            <div className="w-full h-full relative visible md:invisible">
-              <Image
-                alt="Proposal photo"
-                src="/assets/images/proposal.webp"
-                fill
-                objectFit="cover"
-              />
-            </div>
-          </div> */}
           <div className="flex flex-col items-center text-black text-center bg-white opacity-95 border border-zinc-200 shadow-md w-[90%] h-fit rounded-lg pt-8 px-8 pb-12 mx-auto my-auto md:w-[65%] md:left-[17.5%] lg:w-1/2 lg:left-1/4 top-[45%] absolute left-[5%]">
             <Image
               alt="Cherry Blossom"
@@ -36,7 +26,7 @@ export default async function Home() {
               height={20}
               className="max-md:invisible max-md:h-0"
             />
-            <h2 className="font-fancy text-5xl mb-3 mt-8 md:text-7xl">
+            <h2 className="font-fancy text-5xl mb-3 mt-8 md:text-6xl lg:text-7xl">
               Annie + Richard
             </h2>
             <p className="font-bellefair mt-4 mb-8 text-md tracking-widest md:text-lg">
@@ -46,7 +36,10 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen pt-24 pb-16 md:pt-4 md:pb-24 px-8 text-slate-800">
+      <section
+        id="The-Wedding"
+        className="min-h-screen pt-32 pb-16 md:pb-24 px-8 text-slate-800"
+      >
         <h3 className="text-4xl mb-7 font-bellefair md:text-5xl">
           The Wedding
         </h3>

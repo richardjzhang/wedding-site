@@ -6,8 +6,8 @@ export default function Home() {
     <>
       <section className="h-[550px] px-8 md:h-screen">
         <div className="w-full h-full relative flex flex-col">
-          <div className="absolute top-0 w-full h-full md:h-3/4">
-            <div className="w-full h-full relative invisible md:visible">
+          <div className="absolute top-0 w-full h-[400px] md:h-3/4">
+            <div className="w-full h-full relative ">
               <Image
                 alt="Proposal photo"
                 src="/assets/images/proposal-grid.webp"
@@ -16,7 +16,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="absolute top-0 w-full h-[400px] md:h-3/4">
+          {/* <div className="absolute top-0 w-full h-[400px] md:h-3/4">
             <div className="w-full h-full relative visible md:invisible">
               <Image
                 alt="Proposal photo"
@@ -25,7 +25,7 @@ export default function Home() {
                 objectFit="cover"
               />
             </div>
-          </div>
+          </div> */}
           <div className="flex flex-col items-center text-black text-center bg-white opacity-95 border border-zinc-200 shadow-md w-[90%] h-fit rounded-lg pt-8 px-8 pb-12 mx-auto my-auto md:w-[65%] md:left-[17.5%] lg:w-1/2 lg:left-1/4 top-[45%] absolute left-[5%]">
             <Image
               alt="Cherry Blossom"
@@ -45,7 +45,7 @@ export default function Home() {
         </div>
       </section>
       <section className="min-h-screen py-24 md:py-4 px-8 text-slate-800">
-        <h3 className="text-4xl mb-7 font-bellefair sm:text-5xl">
+        <h3 className="text-4xl mb-7 font-bellefair md:text-5xl">
           The Wedding
         </h3>
         <div className="flex flex-col items-start gap-10 px-3 md:flex-row md:gap-12">

@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { classNames } from "@/utils/classnames";
 
+const OPACITY = "opacity-[97%]";
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileNavOpened, setMobileNavOpened] = useState(false);
@@ -38,7 +40,8 @@ export default function Header() {
           "sticky top-0 z-20 bg-gradient-to-r from-pink-50 to-blue-50 flex justify-center items-center pt-6 pb-6 text-black px-8",
           isScrolled && !mobileNavOpened
             ? "shadow-md border-b border-zinc-200"
-            : ""
+            : "",
+          mobileNavOpened ? OPACITY : ""
         )}
       >
         <div
@@ -78,7 +81,12 @@ export default function Header() {
         </div>
       </div>
       {mobileNavOpened && (
-        <div className="fixed top-[104px] left-0 w-full h-full bg-gradient-to-r from-pink-50 to-blue-50 opacity-95 z-10">
+        <div
+          className={classNames(
+            "fixed top-[104px] left-0 w-full h-full bg-gradient-to-r from-pink-50 to-blue-50 z-10",
+            OPACITY
+          )}
+        >
           <div className="flex flex-col gap-4 px-8">
             <Link
               className=""

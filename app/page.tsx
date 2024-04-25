@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen py-24 md:py-4 px-8 text-slate-800">
+      <section className="min-h-screen pt-24 pb-16 md:pt-4 md:pb-24 px-8 text-slate-800">
         <h3 className="text-4xl mb-7 font-bellefair md:text-5xl">
           The Wedding
         </h3>

@@ -43,7 +43,7 @@ export default async function Home() {
         <h3 className="text-4xl mb-7 font-bellefair md:text-5xl">
           The Wedding
         </h3>
-        <div className="flex flex-col items-start gap-10 px-3 md:flex-row md:gap-12">
+        <div className="flex flex-col items-start gap-10 px-1 md:px-3 md:flex-row md:gap-12">
           <div className="md:w-60">
             <h4 className="uppercase text-sm font-semibold tracking-widest">
               The venue

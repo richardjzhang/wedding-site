@@ -26,12 +26,16 @@ export default async function Home() {
               height={20}
               className="max-md:invisible max-md:h-0"
             />
-            <h2 className="font-fancy text-5xl mb-3 mt-8 md:text-6xl lg:text-7xl">
-              Annie + Richard
-            </h2>
-            <p className="font-bellefair mt-4 mb-8 text-md tracking-widest md:text-lg">
-              10 JANUARY 2025
-            </p>
+            <div className="mb-3 mt-8">
+              <h2 className="font-fancy text-5xl md:text-6xl lg:text-7xl">
+                Annie + Richard
+              </h2>
+            </div>
+            <div className="mb-8 mt-4">
+              <p className="font-bellefair text-md tracking-widest md:text-lg">
+                10 JANUARY 2025
+              </p>
+            </div>
             <CountdownTimer date="2025-01-10 16:00:00" />
           </div>
         </div>

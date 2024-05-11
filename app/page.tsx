@@ -102,7 +102,7 @@ export default async function Home() {
             <div className="mt-8 flex flex-col gap-6">
               <div className="flex items-start gap-20 lg:gap-32">
                 <p className="text-xl font-semibold text-nowrap w-16">
-                  4:00 <sup>pm</sup>
+                  3:45 <sup>pm</sup>
                 </p>
                 <div className="md:w-[400px]">
                   <h5 className="mt-1 uppercase font-semibold tracking-widest">

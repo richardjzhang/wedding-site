@@ -17,6 +17,9 @@ const lux = Mrs_Saint_Delafield({
 export const metadata: Metadata = {
   title: "Annie & Richard",
   description: "Wedding invitation website for Annie & Richard",
+  openGraph: {
+    images: ["/assets/images/proposal.webp"],
+  },
 };
 
 export default function RootLayout({

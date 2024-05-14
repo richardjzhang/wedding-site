@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Annie & Richard",
   description: "Wedding invitation website for Annie & Richard",
   openGraph: {
-    images: ["/assets/images/proposal.webp"],
+    images: ["https://wedding.richardjzhang.com/assets/images/proposal.webp"],
   },
 };
 

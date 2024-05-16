@@ -18,7 +18,7 @@ export default async function Home() {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center text-black text-center bg-white opacity-95 border border-zinc-200 shadow-md w-[90%] min-h-fit rounded-lg pt-8 px-8 pb-12 mx-auto my-auto md:w-[65%] md:left-[17.5%] lg:w-1/2 lg:left-1/4 top-[45%] absolute left-[5%]">
+          <div className="flex flex-col items-center text-black text-center bg-white opacity-95 border border-zinc-200 shadow-md w-[90%] min-h-fit rounded-lg pt-8 px-8 pb-12 mx-auto my-auto md:w-[65%] md:left-[17.5%] lg:w-1/2 lg:left-1/4 top-[40%] absolute left-[5%]">
             <Image
               alt="Cherry Blossom"
               src="/assets/images/cherry-blossom-flower.webp"

@@ -73,12 +73,11 @@ export default function Header() {
           </div>
           <p className="w-fit md:text-4xl font-fancy text-2xl">R</p>
         </div>
-        <div className="flex items-center max-md:invisible max-md:w-0">
-          <p className="font-bellefair tracking-widest text-xl text-slate-500">
+        <Link className="max-md:invisible max-md:w-0" href="#RSVP">
+          <p className="font-bellefair tracking-widest text-xl text-slate-700 hover:text-black cursor-pointer">
             RSVP
           </p>
-          <sub className="mt-4 text-slate-500">Coming soon</sub>
-        </div>
+        </Link>
       </div>
       {mobileNavOpened && (
         <div
@@ -97,12 +96,14 @@ export default function Header() {
                 The Wedding
               </p>
             </Link>
-            <div className="flex items-center">
-              <p className="font-bellefair tracking-widest text-xl text-slate-500">
+            <Link
+              href="#RSVP"
+              onClick={() => setMobileNavOpened((prev) => !prev)}
+            >
+              <p className="font-bellefair tracking-widest text-xl text-slate-700 hover:text-black cursor-pointer">
                 RSVP
               </p>
-              <sub className="mt-4 text-slate-500">Coming soon</sub>
-            </div>
+            </Link>
           </div>
         </div>
       )}

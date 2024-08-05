@@ -21,7 +21,8 @@ export async function rsvpServerAction(
 
   if (invitationExists.rows[0].confirmed_attendees !== null) {
     return {
-      message: "You've already RSVP'ed",
+      message:
+        "You've already RSVP'ed. If you need to make a change to your booking, please contact Annie or Richard!",
     };
   }
 

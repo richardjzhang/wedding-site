@@ -118,47 +118,63 @@ export function RSVPForm() {
       {showAdditionalPeopleForm && (
         <div>
           <h2 className="text-4xl mb-4 font-bellefair text-center">
-            Hi {rsvpState.mainInvitee}! Who else is coming?
+            Hi {rsvpState.mainInvitee}! Anyone else coming and any dietary
+            requirements?
           </h2>
           <form
-            className="flex flex-col space-y-3"
+            className="flex flex-col"
             action={setAdditionalPeopleFormAction}
           >
-            <div className="flex items-top space-x-2">
-              <Checkbox
-                id={rsvpState.mainInvitee}
-                name="attendee"
-                value={rsvpState.mainInvitee}
-              />
-              <div className="grid gap-1.5 leading-none">
-                <label
-                  htmlFor={rsvpState.mainInvitee}
-                  className="font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  {rsvpState.mainInvitee}
-                </label>
-              </div>
-            </div>
-            {rsvpState.additionalPeople.map((person: string, index: number) => (
-              <div
-                key={`${person}-${index}`}
-                className="items-top flex space-x-2"
-              >
+            <div className="flex flex-col space-y-3">
+              <div className="flex items-top space-x-2">
                 <Checkbox
-                  id={`${person}-${index}`}
+                  id={rsvpState.mainInvitee}
                   name="attendee"
-                  value={person}
+                  value={rsvpState.mainInvitee}
                 />
                 <div className="grid gap-1.5 leading-none">
                   <label
-                    htmlFor={`${person}-${index}`}
+                    htmlFor={rsvpState.mainInvitee}
                     className="font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   >
-                    {person}
+                    {rsvpState.mainInvitee}
                   </label>
                 </div>
               </div>
-            ))}
+              {rsvpState.additionalPeople.map(
+                (person: string, index: number) => (
+                  <div
+                    key={`${person}-${index}`}
+                    className="items-top flex space-x-2"
+                  >
+                    <Checkbox
+                      id={`${person}-${index}`}
+                      name="attendee"
+                      value={person}
+                    />
+                    <div className="grid gap-1.5 leading-none">
+                      <label
+                        htmlFor={`${person}-${index}`}
+                        className="font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        {person}
+                      </label>
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+            <div className="border-b border-slate-900 py-2 w-full mt-5">
+              <h2 className="text-xl font-bellefair">Dietary Requirements</h2>
+              <input
+                className="mt-2 appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                type="text"
+                name="dietaryRequirements"
+                placeholder="Nuts, gluten, etc."
+                aria-label="Dietary Requirements"
+                required
+              />
+            </div>
             <SubmitAttendeesButton />
             <input type="hidden" name="code" value={rsvpState.code} />
           </form>

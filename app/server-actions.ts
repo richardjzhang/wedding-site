@@ -42,13 +42,14 @@ export async function confirmAttendeesServerAction(
 ) {
   const attendees = formData.getAll("attendee");
   const code = formData.get("code") as string;
+  const dietaryRequirements = formData.get("dietaryRequirements") as string;
   const attendeesArray = attendees.map(String);
   const attendeesPgArray = `{${attendeesArray.join(",")}}`;
 
   try {
     await sql`
     UPDATE wedding_invitations
-    SET confirmed_attendees = ${attendeesPgArray}, confirmed_count = ${attendeesArray.length}
+    SET confirmed_attendees = ${attendeesPgArray}, confirmed_count = ${attendeesArray.length}, dietary_requirements = ${dietaryRequirements}
     WHERE rsvp_code = ${code}
   `;
   } catch (error) {

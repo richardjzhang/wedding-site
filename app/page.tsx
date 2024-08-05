@@ -193,12 +193,7 @@ export default async function Home() {
               <p className="mt-10 text-9xl font-bellefair font-semibold">S</p>
             </div>
           </div>
-          <div className="my-auto flex flex-col justify-center">
-            <h3 className="text-4xl mb-4 font-bellefair text-center">
-              Enter your RSVP Code
-            </h3>
-            <RSVPForm />
-          </div>
+          <RSVPForm />
           <div className="flex flex-col gap-32 mt-auto max-md:invisible">
             <div>
               <p className="text-9xl font-bellefair font-semibold ">V</p>

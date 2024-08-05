@@ -19,11 +19,11 @@ export async function rsvpServerAction(
     };
   }
 
-  // if (invitationExists.rows[0].confirmed_attendees !== null) {
-  //   return {
-  //     message: "You've already RSVP'ed",
-  //   };
-  // }
+  if (invitationExists.rows[0].confirmed_attendees !== null) {
+    return {
+      message: "You've already RSVP'ed",
+    };
+  }
 
   return {
     message: "Success",

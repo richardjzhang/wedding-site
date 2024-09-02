@@ -118,8 +118,7 @@ export function RSVPForm() {
       {showAdditionalPeopleForm && (
         <div>
           <h2 className="text-4xl mb-4 font-bellefair text-center">
-            Hi {rsvpState.mainInvitee}! Anyone else coming and any dietary
-            requirements?
+            Please confirm who&apos;s coming and any dietary requirements
           </h2>
           <form
             className="flex flex-col"

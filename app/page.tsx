@@ -31,8 +31,8 @@ export default async function Home() {
               </h2>
             </div>
             <div className="mb-8 mt-4">
-              <p className="font-bellefair text-md tracking-widest md:text-lg">
-                10 JANUARY 2025
+              <p className="font-bellefair text-md tracking-widest md:text-lg uppercase">
+                Friday, 10 January 2025
               </p>
             </div>
             <CountdownTimer date="2025-01-10 16:00:00" />

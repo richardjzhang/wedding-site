@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   rsvpServerAction,
   confirmAttendeesServerAction,
@@ -14,6 +15,7 @@ const initialRSVPState = {
   additionalPeople: [],
   mainInvitee: "",
   code: "",
+  cannotAttend: false,
 };
 
 const initialAdditionalPeopleState = {
@@ -26,7 +28,7 @@ function RSVPButton() {
 
   return (
     <button
-      className="mt-5 px-16 py-2 rounded bg-transparent text-slate-800 border border-slate-800 w-full"
+      className="mt-5 px-16 py-2 rounded bg-pink-400 text-white border hover:bg-transparent hover:text-pink-400 hover:border-pink-300 w-full"
       type="submit"
       disabled={pending}
     >
@@ -40,7 +42,7 @@ function SubmitAttendeesButton() {
 
   return (
     <button
-      className="mt-5 px-16 py-2 rounded bg-transparent text-slate-800 border border-slate-800 w-full"
+      className="mt-8 px-16 py-2 rounded text-white border bg-pink-400 hover:bg-transparent hover:text-pink-400 hover:border-pink-300 w-full"
       type="submit"
       disabled={pending}
     >
@@ -49,23 +51,12 @@ function SubmitAttendeesButton() {
   );
 }
 
-function confirmationMessage(
-  mainInvitee: string,
-  confirmedAttendees: string[]
-) {
-  const isMainInviteeConfirmed = confirmedAttendees.includes(mainInvitee);
-  const otherAttendeesCount = confirmedAttendees.length - 1;
-  const othersText = otherAttendeesCount === 1 ? "" : "s";
-
-  if (isMainInviteeConfirmed) {
-    return confirmedAttendees.length === 1
-      ? `You're locked in for the wedding ${mainInvitee}. We'll see you there!`
-      : `You're locked in for the wedding ${mainInvitee} with ${otherAttendeesCount} other${othersText}. We'll see you there!`;
-  } else {
-    return confirmedAttendees.length === 1
-      ? `Shame we won't see you there ${mainInvitee}! But we've locked in ${confirmedAttendees[0]} for the wedding. We're looking forward to seeing them!`
-      : `Shame we won't see you there ${mainInvitee}! But we've locked in ${otherAttendeesCount} other${othersText} for the wedding. We're looking forward to seeing them!`;
+function confirmationMessage(confirmedAttendees: string[]) {
+  if (confirmedAttendees.length > 0) {
+    return "We can't wait to see you there. Thank you for coming to our special day!";
   }
+
+  return "Sorry to hear you can't make it. We'll miss you!";
 }
 
 export function RSVPForm() {
@@ -78,6 +69,7 @@ export function RSVPForm() {
     confirmAttendeesServerAction,
     initialAdditionalPeopleState
   );
+  const [rsvpCode, setRsvpCode] = useState(searchParams.get("code") || "");
 
   const showInitialForm = !rsvpState.message.includes("Success");
   const showAdditionalPeopleForm =
@@ -99,7 +91,8 @@ export function RSVPForm() {
                 className="mt-2 appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                 type="text"
                 name="code"
-                value={searchParams.get("code") || ""}
+                value={rsvpCode}
+                onChange={(e) => setRsvpCode(e.target.value)}
                 placeholder="Code from invitation"
                 aria-label="RSVP Code"
                 required
@@ -108,7 +101,7 @@ export function RSVPForm() {
             <RSVPButton />
             <p
               className={classNames(
-                "text-sm text-green-400",
+                "text-sm text-slate-400",
                 rsvpState.message && "mt-3",
                 rsvpState.message.includes("Invalid") ? "mt-3 text-red-400" : ""
               )}
@@ -166,17 +159,34 @@ export function RSVPForm() {
                 )
               )}
             </div>
-            <div className="border-b border-slate-900 py-2 w-full mt-5">
+            <div className="py-2 w-full mt-5">
               <h2 className="text-xl font-bellefair">Dietary Requirements</h2>
               <input
-                className="mt-2 appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                className="mt-2 appearance-none bg-transparent border border-slate-500 w-full text-gray-700 mr-3 py-4 px-6 leading-tight focus:outline-none rounded"
                 type="text"
                 name="dietaryRequirements"
-                placeholder="Nuts, gluten, etc."
+                placeholder="Nut allergy for person 1 etc."
                 aria-label="Dietary Requirements"
-                required
               />
             </div>
+            <div className="flex items-center justify-center my-6">
+              <div className="border-b border-slate-500 w-full" />
+              <div className="mx-2 text-slate-500">OR</div>
+              <div className="border-b border-slate-500 w-full" />
+            </div>
+            <div className="flex items-top space-x-2">
+              <Checkbox id="cannot-attend" name="cannotAttend" />
+              <div className="grid gap-1.5 leading-none">
+                <label
+                  htmlFor="cannot-attend"
+                  className="font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  {rsvpState.additionalPeople.length > 0 ? "We" : "I"}{" "}
+                  won&apos;t be able to make it
+                </label>
+              </div>
+            </div>
+
             <SubmitAttendeesButton />
             <input type="hidden" name="code" value={rsvpState.code} />
           </form>
@@ -188,10 +198,7 @@ export function RSVPForm() {
             Thanks for confirming!
           </h2>
           <p className="text-slate-800 text-center text-lg">
-            {confirmationMessage(
-              rsvpState.mainInvitee,
-              additionalPeopleState.confirmedAttendees
-            )}
+            {confirmationMessage(additionalPeopleState.confirmedAttendees)}
           </p>
         </div>
       )}

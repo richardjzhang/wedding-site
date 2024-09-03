@@ -22,7 +22,14 @@ export async function rsvpServerAction(
   if (invitationExists.rows[0].confirmed_attendees !== null) {
     return {
       message:
-        "You've already RSVP'ed. If you need to make a change to the attendees, please contact Annie or Richard!",
+        "You've already RSVP'ed that you will be attending. If you need to make a change to the attendees, please contact us.",
+    };
+  }
+
+  if (invitationExists.rows[0].confirmed_count === 0) {
+    return {
+      message:
+        "You've already RSVP'ed that you can't attend. If you need to make a change, please contact us.",
     };
   }
 
@@ -31,6 +38,7 @@ export async function rsvpServerAction(
     mainInvitee: invitationExists.rows[0].first_name,
     additionalPeople: invitationExists.rows[0].additional_people,
     code: rsvpCode,
+    cannotAttend: false,
   };
 }
 
@@ -45,22 +53,42 @@ export async function confirmAttendeesServerAction(
   const dietaryRequirements = formData.get("dietaryRequirements") as string;
   const attendeesArray = attendees.map(String);
   const attendeesPgArray = `{${attendeesArray.join(",")}}`;
+  const cannotAttend = formData.get("cannotAttend") === "on";
 
-  try {
-    await sql`
-    UPDATE wedding_invitations
-    SET confirmed_attendees = ${attendeesPgArray}, confirmed_count = ${attendeesArray.length}, dietary_requirements = ${dietaryRequirements}
-    WHERE rsvp_code = ${code}
-  `;
-  } catch (error) {
-    console.log({ error });
+  if (cannotAttend) {
+    try {
+      await sql`
+      UPDATE wedding_invitations
+      SET confirmed_count = 0
+      WHERE rsvp_code = ${code}
+    `;
+    } catch (error) {
+      console.log({ error });
+      return {
+        message: "Error",
+      };
+    }
     return {
-      message: "Error",
+      message: "Success",
+      confirmedAttendees: [],
+    };
+  } else {
+    try {
+      await sql`
+      UPDATE wedding_invitations
+      SET confirmed_attendees = ${attendeesPgArray}, confirmed_count = ${attendeesArray.length}, dietary_requirements = ${dietaryRequirements}
+      WHERE rsvp_code = ${code}
+    `;
+    } catch (error) {
+      console.log({ error });
+      return {
+        message: "Error",
+      };
+    }
+
+    return {
+      message: "Success",
+      confirmedAttendees: attendeesArray,
     };
   }
-
-  return {
-    message: "Success",
-    confirmedAttendees: attendeesArray,
-  };
 }

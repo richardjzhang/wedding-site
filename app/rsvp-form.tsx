@@ -7,6 +7,7 @@ import {
 import { useFormStatus, useFormState } from "react-dom";
 import { Checkbox } from "@/components/ui/checkbox";
 import { classNames } from "@/utils/classnames";
+import { useSearchParams } from "next/navigation";
 
 const initialRSVPState = {
   message: "",
@@ -68,6 +69,7 @@ function confirmationMessage(
 }
 
 export function RSVPForm() {
+  const searchParams = useSearchParams();
   const [rsvpState, rsvpFormAction] = useFormState(
     rsvpServerAction,
     initialRSVPState
@@ -97,6 +99,7 @@ export function RSVPForm() {
                 className="mt-2 appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                 type="text"
                 name="code"
+                value={searchParams.get("code") || ""}
                 placeholder="Code from invitation"
                 aria-label="RSVP Code"
                 required

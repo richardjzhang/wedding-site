@@ -1,6 +1,8 @@
 import Image from "next/image";
 import CountdownTimer from "@/components/CountdownTimer";
 import { RSVPForm } from "./rsvp-form";
+import { Suspense } from "react";
+import Link from "next/link";
 
 export default async function Home() {
   return (
@@ -36,6 +38,11 @@ export default async function Home() {
               </p>
             </div>
             <CountdownTimer date="2025-01-10 16:00:00" />
+            <Link href="#RSVP">
+              <button className="mt-8 px-8 py-2 rounded-lg border text-white bg-pink-400 w-full font-bellefair text-lg transition-colors hover:bg-transparent hover:text-pink-400 hover:border-pink-300">
+                RSVP Now
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -193,7 +200,9 @@ export default async function Home() {
               <p className="mt-10 text-9xl font-bellefair font-semibold">S</p>
             </div>
           </div>
-          <RSVPForm />
+          <Suspense fallback={<div>Loading</div>}>
+            <RSVPForm />
+          </Suspense>
           <div className="flex flex-col gap-32 mt-auto max-md:invisible">
             <div>
               <p className="text-9xl font-bellefair font-semibold ">V</p>

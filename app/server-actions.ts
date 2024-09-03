@@ -35,7 +35,7 @@ export async function rsvpServerAction(
 
   return {
     message: "Success",
-    mainInvitee: invitationExists.rows[0].first_name,
+    mainInvitee: `${invitationExists.rows[0].first_name} ${invitationExists.rows[0].last_name}`,
     additionalPeople: invitationExists.rows[0].additional_people,
     code: rsvpCode,
     cannotAttend: false,

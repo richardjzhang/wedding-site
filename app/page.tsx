@@ -191,7 +191,7 @@ export default async function Home() {
           </div>
         </div>
         <div className="mb-20 w-full h-4 bg-slate-900"></div>
-        <div className="flex items-center h-full md:gap-40 lg:gap-60">
+        <div className="flex items-center h-full md:gap-40 lg:gap-60 max-w-full">
           <div className="flex flex-col gap-32 mb-auto max-md:invisible">
             <div>
               <p className="text-9xl font-bellefair font-semibold">R</p>

@@ -79,7 +79,7 @@ export function RSVPForm() {
     additionalPeopleState.message.includes("Success") &&
     additionalPeopleState?.confirmedAttendees !== undefined;
   return (
-    <div className="my-auto flex flex-col justify-center w-[316px]">
+    <div className="my-auto flex flex-col justify-center max-w-full md:w-[316px]">
       {showInitialForm && (
         <>
           <h3 className="text-4xl mb-4 font-bellefair text-center">

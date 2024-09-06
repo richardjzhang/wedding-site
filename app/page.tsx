@@ -167,7 +167,7 @@ export default async function Home() {
       </section>
 
       <section
-        className="py-20 px-8 text-slate-800 h-[900px] flex flex-col items-center relative"
+        className="py-20 px-8 text-slate-800 h-[900px] flex flex-col items-center relative max-w-full"
         id="RSVP"
       >
         <div className="top-0 -left-5 absolute md:-top-20">
@@ -192,7 +192,7 @@ export default async function Home() {
         </div>
         <div className="mb-20 w-full h-4 bg-slate-900"></div>
         <div className="flex items-center h-full md:gap-40 lg:gap-60 max-w-full">
-          <div className="flex flex-col gap-32 mb-auto max-md:invisible">
+          <div className="flex flex-col gap-32 mb-auto max-md:invisible max-md:w-0">
             <div>
               <p className="text-9xl font-bellefair font-semibold">R</p>
             </div>
@@ -203,7 +203,7 @@ export default async function Home() {
           <Suspense fallback={<div>Loading</div>}>
             <RSVPForm />
           </Suspense>
-          <div className="flex flex-col gap-32 mt-auto max-md:invisible">
+          <div className="flex flex-col gap-32 mt-auto max-md:invisible max-md:w-0">
             <div>
               <p className="text-9xl font-bellefair font-semibold ">V</p>
             </div>

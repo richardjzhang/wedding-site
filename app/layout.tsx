@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bellefair.variable} ${lux.variable} bg-gradient-to-r from-pink-50 via-blue-50 to-pink-50`}
+        className={`${bellefair.variable} ${lux.variable} bg-gradient-to-r from-pink-50 via-blue-50 to-pink-50 !overflow-x-hidden`}
       >
         <Header />
         <div className="mx-auto">{children}</div>

@@ -7,7 +7,7 @@ import Link from "next/link";
 export default async function Home() {
   return (
     <>
-      <section className="h-[550px] px-8 md:h-screen md:-mb-32">
+      <section className="h-[550px] px-8 md:h-screen md:-mb-32 mb-16">
         <div className="w-full h-full relative flex flex-col">
           <div className="absolute top-0 w-full h-[400px] md:h-3/4">
             <div className="w-full h-full relative ">

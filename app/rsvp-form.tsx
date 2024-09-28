@@ -136,28 +136,29 @@ export function RSVPForm() {
                   </label>
                 </div>
               </div>
-              {rsvpState.additionalPeople.map(
-                (person: string, index: number) => (
-                  <div
-                    key={`${person}-${index}`}
-                    className="items-top flex space-x-2"
-                  >
-                    <Checkbox
-                      id={`${person}-${index}`}
-                      name="attendee"
-                      value={person}
-                    />
-                    <div className="grid gap-1.5 leading-none">
-                      <label
-                        htmlFor={`${person}-${index}`}
-                        className="font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        {person}
-                      </label>
+              {rsvpState.additionalPeople &&
+                rsvpState.additionalPeople.map(
+                  (person: string, index: number) => (
+                    <div
+                      key={`${person}-${index}`}
+                      className="items-top flex space-x-2"
+                    >
+                      <Checkbox
+                        id={`${person}-${index}`}
+                        name="attendee"
+                        value={person}
+                      />
+                      <div className="grid gap-1.5 leading-none">
+                        <label
+                          htmlFor={`${person}-${index}`}
+                          className="font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        >
+                          {person}
+                        </label>
+                      </div>
                     </div>
-                  </div>
-                )
-              )}
+                  )
+                )}
             </div>
             <div className="py-2 w-full mt-5">
               <h2 className="text-xl font-bellefair">Dietary Requirements</h2>
@@ -181,8 +182,8 @@ export function RSVPForm() {
                   htmlFor="cannot-attend"
                   className="font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
-                  {rsvpState.additionalPeople.length > 0 ? "We" : "I"}{" "}
-                  won&apos;t be able to make it
+                  {rsvpState.additionalPeople ? "We" : "I"} won&apos;t be able
+                  to make it
                 </label>
               </div>
             </div>

@@ -7,7 +7,7 @@ export async function rsvpServerAction(
   },
   formData: FormData
 ) {
-  const rsvpCode = formData.get("code") as string;
+  const rsvpCode = (formData.get("code") as string).toUpperCase();
 
   const invitationExists = await sql`
     SELECT * FROM wedding_invitations WHERE rsvp_code = ${rsvpCode}
